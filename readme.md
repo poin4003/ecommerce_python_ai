@@ -22,10 +22,13 @@
 - `Dockerfile`: File để build container Docker.
 - `.env`: File chứa các biến môi trường (token Hugging Face, cấu hình Flask).
 
-## Hướng dẫn clone và chạy
+## Cấu hình môi trường
+Để cấu hình các biến môi trường cho ứng dụng, bạn cần tạo một file `.env` trong thư mục gốc của dự án và thiết lập các giá trị sau:
 
-### 1. Clone dự án
-Clone mã nguồn về máy:
-```bash
-git clone <đường-dẫn-repository>
-cd ecommerce_project
+```env
+FLASK_ENV=development            # Chế độ Flask (development, production)
+DATABASE_URI=sqlite:///products.db  # Đường dẫn đến cơ sở dữ liệu SQLite
+UPLOAD_FOLDER=static/uploads      # Thư mục lưu trữ hình ảnh sản phẩm
+MAX_CONTENT_LENGTH=16777216       # Kích thước tối đa của tệp tải lên (16MB)
+HUGGING_FACE_TOKEN=   # Token để truy cập API Hugging Face
+HUGGING_FACE_SENTIMENT_ANALYSIS_ENDPOINT=https://api-inference.huggingface.co/models/distilbert-base-uncased-finetuned-sst-2-english  # Endpoint API Hugging Face cho phân tích cảm xúc
