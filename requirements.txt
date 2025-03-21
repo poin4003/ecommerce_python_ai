@@ -1,0 +1,9 @@
+flask
+flask-sqlalchemy
+requests
+Pillow
+tensorflow
+tf-keras
+transformers
+python-dotenv
+werkzeug
